@@ -14,7 +14,7 @@ class APICalls {
     
     var city : String = "Gliwice"
     
-    func getWeather(city:String){
+    func getWeather(city:String, completionHandler: @escaping (WeatherModel?, Error?) -> Void){
         let queryURL = URL(string: SERVER + "q=" + city + "&appid=" + API_KEY)!
         
         let task = URLSession.shared.dataTask(with: queryURL) { (data, response, error) in
@@ -23,14 +23,17 @@ class APICalls {
                     let dataResponse = data
                     let decoder = JSONDecoder()
                     let model = try decoder.decode(WeatherModel.self, from: dataResponse!)
+                    completionHandler(model, nil)
                     print("Temperature in ", model.name, "is equal to: ", model.main.temp)
-                } catch {
+                } catch let err{
                     print("error")
+                    completionHandler(nil, err)
                 }
                 
             }
         }
         task.resume()
+        print(task)
     }
     
 }
