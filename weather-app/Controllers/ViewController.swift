@@ -10,9 +10,10 @@ import UIKit
 import os;
 class ViewController: UIViewController {
     let model = APICalls()
+    @IBOutlet weak var CityLabel: UITextField!
     @IBAction func actionSubmit(_ sender: Any) {
-        os_log("test action button submit");
-        model.getWeather()
+        let city = CityLabel.text!
+        model.getWeather(city: city)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
