@@ -51,10 +51,10 @@ class MainWeather: Codable{
 
 class Wind: Codable{
     let speed: Double
-    let deg: Double
+    var deg: Double?
     init(speed:Double, deg:Double){
         self.speed = speed
-        self.deg = deg
+        if deg != nil {self.deg = deg} else { self.deg = nil }
     }
 }
 

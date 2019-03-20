@@ -9,5 +9,23 @@
 import Foundation
 
 class StringParser: StringParserProtocol{
-    func parse(string: String) -> String { return string.replacingOccurrences(of: " ", with: "%20") }
+    func parse(string: String) -> String {
+        // ąśćłóężź
+        // var returnString = string.replacingOccurrences(of: "ą", with: "a")
+        let str = swapCharacters(string: string, toSwap: ["ą", "ś", "ć", "ł", "ó", "ę", "ź", "ć", "ż", "ń"], swap: ["a","s","c","l","o","e","z","c","z","n"]);
+        let toReturn = str.replacingOccurrences(of: " ", with: "%20")
+        print(toReturn)
+        return toReturn
+    }
+    
+    private func swapCharacters(string: String, toSwap: [String], swap: [String]) -> String{
+        var s = string.replacingOccurrences(of: toSwap[0], with: swap[0])
+        var index = 0
+        for char in toSwap{
+            s = s.replacingOccurrences(of: toSwap[index], with: swap[index])
+            index += 1
+        }
+        
+        return s
+    }
 }
