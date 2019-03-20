@@ -35,11 +35,11 @@ class Weather: Codable{
 }
 
 class MainWeather: Codable{
-    let temp: Double
+    var temp: Double
     let pressure: Double
     let humidity: Double
-    let temp_min: Double
-    let temp_max: Double
+    var temp_min: Double
+    var temp_max: Double
     init(temp: Double, pressure: Double, humidity: Double, temp_min: Double, temp_max: Double){
         self.temp = temp
         self.pressure =  pressure

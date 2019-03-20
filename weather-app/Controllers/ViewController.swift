@@ -10,6 +10,7 @@ import UIKit
 import os;
 class ViewController: UIViewController {
     let model = APICalls()
+    var weather: WeatherModel?
     @IBOutlet weak var CityLabel: UITextField!
     @IBOutlet weak var WeatherInfoLabel: UILabel!
     @IBAction func actionSubmit(_ sender: Any) {
@@ -17,7 +18,8 @@ class ViewController: UIViewController {
         model.getWeather(city: city, completionHandler: { weather, error in
             if let weather = weather {
                 DispatchQueue.main.async {
-                    self.WeatherInfoLabel.text = "Weather in:  \(weather.name) \n Temp: \(weather.main.temp) \n Wind speed: \(weather.wind.speed) \n \(weather.weather[0].description)"
+                    self.weather = weather
+                    self.WeatherInfoLabel.text = self.getWeatherInfoString()
                 }
                 
             } else {
@@ -34,6 +36,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    
+    private func getWeatherInfoString() -> String{
+        if weather != nil {
+            let temp = String(format: "%.2f", self.weather!.main.temp) + "°C"
+            let name = self.weather!.name
+            let windSpeed = "\(self.weather!.wind.speed) m/s"
+            let description = self.weather!.weather[0].description
+            return "Weather in:  \(name) \n Temp: \(temp) \n Wind speed: \(windSpeed) \n \(description)"
+        } else {
+            return "Error..."
+        }
+    }
 
 }
 
