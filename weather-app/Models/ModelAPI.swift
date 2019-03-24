@@ -17,18 +17,18 @@ class APICalls {
     
     func getWeather(city:String, completionHandler: @escaping (WeatherModel?, Error?) -> Void){
         let q = stringParser.parse(string: SERVER + "q=" + city + "&appid=" + API_KEY)
-        let queryURL = URL(string: q)!
+        print("query url: \(q)")
+        guard let queryURL = URL(string: q) else {
+            completionHandler(nil, NSError(domain:"",code:401))
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: queryURL) { (data, response, error) in
             if error == nil {
                 do{
-                    print("xd 1?")
                     let dataResponse = data
-                    print("xd 2?")
                     let decoder = JSONDecoder()
-                    print("xd 3?")
                     let model = try decoder.decode(WeatherModel.self, from: dataResponse!)
-                    print("xd 4?")
                     model.main.temp = self.weatherParser.tempParser(temp: model.main.temp)
                     model.main.temp_max = self.weatherParser.tempParser(temp: model.main.temp_max)
                     model.main.temp_min = self.weatherParser.tempParser(temp: model.main.temp_min)
