@@ -30,12 +30,19 @@ class ViewController: UIViewController {
             }
         })
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ForecastTableVC{
+            let vc = segue.destination as? ForecastTableVC
+            vc?.model = self.model
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.WeatherInfoLabel.text = "Here you will see weather info..."
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     
     private func getWeatherInfoString() -> String{
         if weather != nil {

@@ -21,6 +21,7 @@
 		06C4ADF722424CAC0058F465 /* weatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ADF622424CAC0058F465 /* weatherParser.swift */; };
 		06C4ADF922424DBF0058F465 /* weatherParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4ADF822424DBF0058F465 /* weatherParserProtocol.swift */; };
 		9249247B2247CD27005B5439 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9249247A2247CD27005B5439 /* ForecastViewController.swift */; };
+		9267FDAF2249460A00730A72 /* ForecastTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9267FDAE2249460A00730A72 /* ForecastTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		06C4ADF622424CAC0058F465 /* weatherParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherParser.swift; sourceTree = "<group>"; };
 		06C4ADF822424DBF0058F465 /* weatherParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherParserProtocol.swift; sourceTree = "<group>"; };
 		9249247A2247CD27005B5439 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		9267FDAE2249460A00730A72 /* ForecastTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				067B10E2222FD96100B9E739 /* CurrentWeatherViewController.swift */,
 				9249247A2247CD27005B5439 /* ForecastViewController.swift */,
+				9267FDAE2249460A00730A72 /* ForecastTableVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				06C4ADF722424CAC0058F465 /* weatherParser.swift in Sources */,
 				06C4ADF922424DBF0058F465 /* weatherParserProtocol.swift in Sources */,
 				067B10E1222FD96100B9E739 /* AppDelegate.swift in Sources */,
+				9267FDAF2249460A00730A72 /* ForecastTableVC.swift in Sources */,
 				06C4ADF3224247970058F465 /* stringParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
