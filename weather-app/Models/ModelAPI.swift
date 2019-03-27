@@ -12,6 +12,7 @@ class APICalls {
     let API_KEY : String = "0e859b4b2d8718ad85b6f74c353726f6"
     let WEATHER : String = "https://api.openweathermap.org/data/2.5/weather?"
     let FORECAST : String = "https://api.openweathermap.org/data/2.5/forecast?"
+    let ICONS: String = "https://openweathermap.org/img/w/"
     let stringParser: StringParserProtocol = StringParser()
     let weatherParser: WeatherParserProtocol = WeatherParser()
     var city : String = "Gliwice"
@@ -74,4 +75,15 @@ class APICalls {
         task.resume()
     }
     
+//    func getWeatherIcon(icon: String, completionHandler: @escaping (Data?, Error?)->Void){
+//
+//        completionHandler(data, nil)
+//    }
+//
+    
+    func getData(from url: String, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        let urlIcon = URL(string: "\(ICONS)\(url).png")!
+        print(urlIcon)
+        URLSession.shared.dataTask(with: urlIcon, completionHandler: completion).resume()
+    }
 }

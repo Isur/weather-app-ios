@@ -11,6 +11,7 @@ import os;
 class ViewController: UIViewController {
     let model = APICalls()
     var weather: WeatherModel?
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var CityLabel: UITextField!
     @IBOutlet weak var WeatherInfoLabel: UILabel!
     @IBAction func actionSubmit(_ sender: Any) {
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.weather = weather
                     self.WeatherInfoLabel.text = self.getWeatherInfoString()
+                    self.downloadImage(from: (self.weather?.weather[0].icon)!)
                 }
                 
             } else {
@@ -42,6 +44,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.WeatherInfoLabel.text = "Here you will see weather info..."
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func downloadImage(from url: String) {
+        print("Download Started")
+        self.model.getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            //print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            print(data)
+            DispatchQueue.main.async() {
+                print("SET IMAGE")
+                self.imageView.image = UIImage(data: data)
+            }
+        }
     }
     
     private func getWeatherInfoString() -> String{

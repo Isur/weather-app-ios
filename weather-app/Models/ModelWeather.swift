@@ -62,9 +62,11 @@ class WeatherModel: Codable{
 class Weather: Codable{
     let main: String            // Main description
     let description: String     // Longer description
-    init(main: String, description: String){
+    let icon: String            // String with icon name
+    init(main: String, description: String, icon: String){
         self.main = main
         self.description = description
+        self.icon = icon
     }
 }
 

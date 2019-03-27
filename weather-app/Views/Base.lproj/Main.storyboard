@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,28 +26,56 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-ie-XNY">
-                                <rect key="frame" x="16" y="248" width="343" height="185"/>
+                                <rect key="frame" x="16" y="295" width="343" height="185"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-9i-GGy">
-                                <rect key="frame" x="157" y="617" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="Forecast"/>
-                                <connections>
-                                    <segue destination="5Vd-Lh-2uB" kind="show" id="vbX-TI-wXv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
-                                <rect key="frame" x="132" y="248" width="111" height="37"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-FK-rxC">
+                                <rect key="frame" x="16" y="79" width="176" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-iX-Yao">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="75"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yON-TU-mru">
+                                        <rect key="frame" x="0.0" y="75" width="176" height="139"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-Uz-kix">
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="75"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-69-0VS">
+                                                <rect key="frame" x="0.0" y="75" width="176" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1B-pJ-622"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-MD-Bxo">
+                                                <rect key="frame" x="0.0" y="109" width="176" height="30"/>
+                                                <state key="normal" title="Forecast"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
+                                        <rect key="frame" x="0.0" y="497" width="176" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-9i-GGy">
+                                        <rect key="frame" x="0.0" y="387" width="176" height="30"/>
+                                        <state key="normal" title="Forecast"/>
+                                        <connections>
+                                            <segue destination="5Vd-Lh-2uB" kind="show" id="vbX-TI-wXv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,11 +84,12 @@
                     <connections>
                         <outlet property="CityLabel" destination="59b-IE-ZF5" id="3iT-ND-79e"/>
                         <outlet property="WeatherInfoLabel" destination="6rA-ie-XNY" id="Tbm-SF-NTR"/>
+                        <outlet property="imageView" destination="uEU-iX-Yao" id="z2N-U7-5ez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="158"/>
+            <point key="canvasLocation" x="1032.8" y="157.87106446776613"/>
         </scene>
         <!--Forecast TableVC-->
         <scene sceneID="yla-oi-Tha">
