@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,66 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59b-IE-ZF5">
-                                <rect key="frame" x="16" y="116" width="343" height="43"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="City" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59b-IE-ZF5">
+                                <rect key="frame" x="20" y="72" width="316" height="43"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-ie-XNY">
-                                <rect key="frame" x="16" y="295" width="343" height="185"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-ie-XNY">
+                                <rect key="frame" x="149" y="215" width="76" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-FK-rxC">
-                                <rect key="frame" x="16" y="79" width="176" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-iX-Yao">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="75"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yON-TU-mru">
-                                        <rect key="frame" x="0.0" y="75" width="176" height="139"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-Uz-kix">
-                                                <rect key="frame" x="0.0" y="0.0" width="176" height="75"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-69-0VS">
-                                                <rect key="frame" x="0.0" y="75" width="176" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Submit"/>
-                                                <connections>
-                                                    <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1B-pJ-622"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-MD-Bxo">
-                                                <rect key="frame" x="0.0" y="109" width="176" height="30"/>
-                                                <state key="normal" title="Forecast"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
-                                        <rect key="frame" x="0.0" y="497" width="176" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Submit"/>
-                                        <connections>
-                                            <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-9i-GGy">
-                                        <rect key="frame" x="0.0" y="387" width="176" height="30"/>
-                                        <state key="normal" title="Forecast"/>
-                                        <connections>
-                                            <segue destination="5Vd-Lh-2uB" kind="show" id="vbX-TI-wXv"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-iX-Yao">
+                                <rect key="frame" x="0.0" y="296" width="150" height="150"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-9i-GGy">
+                                <rect key="frame" x="128" y="492" width="119" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Forecast"/>
+                                <connections>
+                                    <segue destination="5Vd-Lh-2uB" kind="show" id="vbX-TI-wXv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
+                                <rect key="frame" x="157.68554666664295" y="140" width="58" height="33.999999999999993"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uEU-iX-Yao" firstAttribute="centerX" secondItem="6rA-ie-XNY" secondAttribute="centerX" id="6id-bd-c8h"/>
+                            <constraint firstItem="uEU-iX-Yao" firstAttribute="top" secondItem="6rA-ie-XNY" secondAttribute="bottom" id="BD3-w3-9t4"/>
+                            <constraint firstItem="iQr-9i-GGy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CR6-QG-m9S"/>
+                            <constraint firstItem="59b-IE-ZF5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CiJ-xg-Sbu"/>
+                            <constraint firstItem="6rA-ie-XNY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I1G-gI-LWR"/>
+                            <constraint firstItem="uEU-iX-Yao" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IAr-cX-4yY"/>
+                            <constraint firstItem="d8E-wD-Dk4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QRX-2I-tHc"/>
+                            <constraint firstItem="59b-IE-ZF5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="a3k-XN-Xf5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iQr-9i-GGy" secondAttribute="bottom" constant="124" id="c4k-Un-o0D"/>
+                            <constraint firstItem="6rA-ie-XNY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gAB-uO-JpZ"/>
+                            <constraint firstItem="d8E-wD-Dk4" firstAttribute="top" secondItem="59b-IE-ZF5" secondAttribute="bottom" id="hYF-2x-Ndz"/>
+                            <constraint firstItem="59b-IE-ZF5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lVp-zM-TLp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Current Weather" id="fLI-gh-dbc"/>

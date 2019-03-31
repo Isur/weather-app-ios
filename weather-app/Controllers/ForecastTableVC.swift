@@ -34,7 +34,9 @@ class ForecastTableVC: UITableViewController {
         })
     }
     
-    
+    func downloadImage(from url: String) {
+        
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -51,6 +53,7 @@ class ForecastTableVC: UITableViewController {
         cellString += " -- Wind " + String(format: "%.2f", self.forecast!.list[indexPath.row].wind.speed) + " m/s"
         cell.detailTextLabel?.text = self.forecast?.list[indexPath.row].dt_txt
         cell.textLabel?.text = cellString
+        cell.imageView?.image = UIImage(named: (self.forecast?.list[indexPath.row].weather[0].icon)!)
         return cell
     }
     
