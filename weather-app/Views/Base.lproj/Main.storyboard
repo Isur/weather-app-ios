@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="City" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59b-IE-ZF5">
-                                <rect key="frame" x="20" y="72" width="316" height="43"/>
+                            <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="City" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="32" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59b-IE-ZF5">
+                                <rect key="frame" x="0.0" y="96" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="asl-yV-kyM"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -42,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
-                                <rect key="frame" x="157.68554666664295" y="140" width="58" height="33.999999999999993"/>
+                                <rect key="frame" x="132" y="142" width="111" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -59,10 +62,10 @@
                             <constraint firstItem="6rA-ie-XNY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I1G-gI-LWR"/>
                             <constraint firstItem="uEU-iX-Yao" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IAr-cX-4yY"/>
                             <constraint firstItem="d8E-wD-Dk4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QRX-2I-tHc"/>
-                            <constraint firstItem="59b-IE-ZF5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="a3k-XN-Xf5"/>
+                            <constraint firstItem="59b-IE-ZF5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="a3k-XN-Xf5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iQr-9i-GGy" secondAttribute="bottom" constant="124" id="c4k-Un-o0D"/>
                             <constraint firstItem="6rA-ie-XNY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gAB-uO-JpZ"/>
-                            <constraint firstItem="d8E-wD-Dk4" firstAttribute="top" secondItem="59b-IE-ZF5" secondAttribute="bottom" id="hYF-2x-Ndz"/>
+                            <constraint firstItem="d8E-wD-Dk4" firstAttribute="top" secondItem="59b-IE-ZF5" secondAttribute="bottom" constant="8" symbolic="YES" id="hYF-2x-Ndz"/>
                             <constraint firstItem="59b-IE-ZF5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lVp-zM-TLp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

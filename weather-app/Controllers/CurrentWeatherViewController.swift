@@ -27,6 +27,7 @@ class ViewController: UIViewController {
             } else {
                 DispatchQueue.main.async {
                     self.WeatherInfoLabel.text = "Error..."
+                    self.imageView.image = nil
                 }
                 
             }
