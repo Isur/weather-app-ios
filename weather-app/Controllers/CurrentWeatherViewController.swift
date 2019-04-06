@@ -8,13 +8,18 @@
 
 import UIKit
 import os;
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     let model = APICalls()
     var weather: WeatherModel?
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var CityLabel: UITextField!
     @IBOutlet weak var WeatherInfoLabel: UILabel!
     @IBAction func actionSubmit(_ sender: Any) {
+       getWeather()
+    }
+
+    private func getWeather(){
+        self.dismissKeyboard()
         let city = CityLabel.text!
         model.getWeather(city: city, completionHandler: { weather, error in
             if let weather = weather {
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
             }
         })
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ForecastTableVC{
             let vc = segue.destination as? ForecastTableVC
@@ -41,10 +46,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        getWeather()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        self.CityLabel.delegate = self
         self.WeatherInfoLabel.text = "Here you will see weather info..."
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func dismissKeyboard(){
+        CityLabel.resignFirstResponder()
     }
     
     func downloadImage(from url: String) {
