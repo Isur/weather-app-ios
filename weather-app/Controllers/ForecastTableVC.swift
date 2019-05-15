@@ -11,16 +11,25 @@ import UIKit
 class ForecastTableVC: UITableViewController {
     var forecast : WeatherForecast?
     var model : APICalls?
+    @IBOutlet weak var search: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    
         getForecast()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    @IBAction func textFieldPrimaryActionTriggered(_ sender: Any) {
+        let c = self.search.text ?? "Gliwice"
+        model?.selectCity(city: c)
+        getForecast()
+    }
+    
     private func getForecast(){
         model?.getWeatherForecast(completionHandler: { (forecast, err) in
             if let forecast = forecast{

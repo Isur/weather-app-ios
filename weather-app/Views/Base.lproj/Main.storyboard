@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOs-g8-FS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-9i-GGy">
                                 <rect key="frame" x="128" y="492" width="119" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Forecast"/>
+                                <state key="normal" title="Forecast">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="5Vd-Lh-2uB" kind="show" id="vbX-TI-wXv"/>
                                 </connections>
@@ -47,13 +49,33 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-wD-Dk4">
                                 <rect key="frame" x="132" y="142" width="111" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpc-s1-k4q">
+                                <rect key="frame" x="16" y="608" width="101" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="GLIWICE"/>
+                                <connections>
+                                    <segue destination="ynZ-Yj-1hq" kind="show" id="zTI-nO-FsW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4T-BA-uLk">
+                                <rect key="frame" x="288" y="600" width="71" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="CLEAR"/>
+                                <connections>
+                                    <action selector="actionClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LNN-4E-5vD"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uEU-iX-Yao" firstAttribute="centerX" secondItem="6rA-ie-XNY" secondAttribute="centerX" id="6id-bd-c8h"/>
                             <constraint firstItem="uEU-iX-Yao" firstAttribute="top" secondItem="6rA-ie-XNY" secondAttribute="bottom" id="BD3-w3-9t4"/>
@@ -74,6 +96,7 @@
                     <connections>
                         <outlet property="CityLabel" destination="59b-IE-ZF5" id="3iT-ND-79e"/>
                         <outlet property="WeatherInfoLabel" destination="6rA-ie-XNY" id="Tbm-SF-NTR"/>
+                        <outlet property="clearButton" destination="e4T-BA-uLk" id="ZOX-dx-ezd"/>
                         <outlet property="imageView" destination="uEU-iX-Yao" id="z2N-U7-5ez"/>
                     </connections>
                 </viewController>
@@ -89,9 +112,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="GRZ-IB-OUW">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="textFieldPrimaryActionTriggered:" destination="5Vd-Lh-2uB" eventType="primaryActionTriggered" id="fWp-XJ-4b0"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="restorationID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="qE6-Ag-itZ" detailTextLabel="K2n-EV-0Iz" rowHeight="37" style="IBUITableViewCellStyleSubtitle" id="fGu-aT-mBV">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="85.5" width="375" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGu-aT-mBV" id="nbe-Jy-Aw7">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
@@ -122,6 +155,11 @@
                             <outlet property="delegate" destination="5Vd-Lh-2uB" id="yZh-Yp-Kvk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="SearchBar" destination="GRZ-IB-OUW" id="7I8-Qb-Xap"/>
+                        <outlet property="search" destination="GRZ-IB-OUW" id="oxj-Rc-on6"/>
+                        <outlet property="searchBar" destination="W5r-F1-XNn" id="eX4-9n-hUL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHE-Wh-JS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,6 +182,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02k-Lr-xAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Gliwice View Controller-->
+        <scene sceneID="Zdb-hX-ztr">
+            <objects>
+                <viewController id="ynZ-Yj-1hq" customClass="GliwiceViewController" customModule="weather_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4o-Zr-skm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-S3-UlA">
+                                <rect key="frame" x="16" y="76" width="343" height="571"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ziN-Yh-N3I"/>
+                    </view>
+                    <connections>
+                        <outlet property="weatherLabel" destination="ixW-S3-UlA" id="ieA-yP-R8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h69-ae-SiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.8" y="908.9955022488756"/>
         </scene>
     </scenes>
 </document>

@@ -17,6 +17,10 @@ class APICalls {
     let weatherParser: WeatherParserProtocol = WeatherParser()
     var city : String = "Gliwice"
     
+    func selectCity(city:String){
+        self.city = city
+    }
+    
     func getWeather(city:String, completionHandler: @escaping (WeatherModel?, Error?) -> Void){
         let q = stringParser.parse(string: WEATHER + "q=" + city + "&appid=" + API_KEY)
         self.city = city

@@ -11,6 +11,7 @@ import os;
 class ViewController: UIViewController, UITextFieldDelegate {
     let model = APICalls()
     var weather: WeatherModel?
+    @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var CityLabel: UITextField!
     @IBOutlet weak var WeatherInfoLabel: UILabel!
@@ -18,6 +19,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
        getWeather()
     }
 
+    @IBAction func actionClear(_ sender: Any) {
+        self.CityLabel.text = ""
+        self.WeatherInfoLabel.text = "Here you will see weather info..."
+        self.imageView.image = nil
+    }
     private func getWeather(){
         self.dismissKeyboard()
         let city = CityLabel.text!
@@ -44,10 +50,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let vc = segue.destination as? ForecastTableVC
             vc?.model = self.model
         }
+        if segue.destination is GliwiceViewController{
+            let vc = segue.destination as? GliwiceViewController
+            vc?.model = self.model
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        print("tset")
         getWeather()
         return true
     }
@@ -55,7 +65,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(tap)
+        self.CityLabel.becomeFirstResponder()
         self.CityLabel.delegate = self
         self.WeatherInfoLabel.text = "Here you will see weather info..."
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,7 +96,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let name = self.weather!.name
             let windSpeed = "\(self.weather!.wind.speed) m/s"
             let description = self.weather!.weather[0].description
-            return "Weather in:  \(name) \n Temp: \(temp) \n Wind speed: \(windSpeed) \n \(description)"
+            let visibility = "Visibility: \(self.weather?.visibility ?? 0)"
+            return "Weather in:  \(name) \n Temp: \(temp) \n Wind speed: \(windSpeed) \n \(description)\n \(visibility)"
         } else {
             return "Error..."
         }
