@@ -91,5 +91,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func clear(_ sender: Any) {
+        self.CityLabel.text = ""
+        self.WeatherInfoLabel.text = "Here you will see weather info..."
+        self.imageView.image = nil
+    }
 }
 

@@ -60,4 +60,11 @@ class ForecastTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.forecast?.city.name
     }
+    
+    @IBOutlet weak var search: UITextField!
+    @IBAction func textFieltPrimaryActionTriggered(_ sender: Any) {
+        let c = self.search.text ?? "Gliwice"
+        model?.selectCity(city: c)
+        getForecast()
+    }
 }

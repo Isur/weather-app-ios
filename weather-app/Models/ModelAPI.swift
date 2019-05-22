@@ -86,4 +86,8 @@ class APICalls {
         print(urlIcon)
         URLSession.shared.dataTask(with: urlIcon, completionHandler: completion).resume()
     }
+    
+    func selectCity(city: String) {
+        self.city = city
+    }
 }

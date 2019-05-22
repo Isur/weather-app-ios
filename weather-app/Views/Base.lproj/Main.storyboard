@@ -52,6 +52,22 @@
                                     <action selector="actionSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAJ-00-Fc4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpc-6m-n8W">
+                                <rect key="frame" x="286" y="513" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Gliwice"/>
+                                <connections>
+                                    <segue destination="Ua9-wC-6uX" kind="show" id="Upy-L3-TBr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-N1-Yn9">
+                                <rect key="frame" x="48" y="513" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5M3-cX-CGl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -81,6 +97,33 @@
             </objects>
             <point key="canvasLocation" x="1032.8" y="157.87106446776613"/>
         </scene>
+        <!--Gliwice View Controller-->
+        <scene sceneID="mUj-QA-eJA">
+            <objects>
+                <viewController id="Ua9-wC-6uX" customClass="GliwiceViewController" customModule="weather_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IB4-dD-fNP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tA-jr-IZT">
+                                <rect key="frame" x="0.0" y="78" width="375" height="269"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kse-L9-lqu"/>
+                    </view>
+                    <connections>
+                        <outlet property="weatherLabel" destination="5tA-jr-IZT" id="syw-XJ-oj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmw-z2-Kqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389.5999999999999" y="915.29235382308855"/>
+        </scene>
         <!--Forecast TableVC-->
         <scene sceneID="yla-oi-Tha">
             <objects>
@@ -89,9 +132,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="oDq-vU-VeU">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="search:" destination="5Vd-Lh-2uB" eventType="editingDidEnd" id="xC9-SY-yOz"/>
+                                <action selector="textFieltPrimaryActionTriggered:" destination="5Vd-Lh-2uB" eventType="primaryActionTriggered" id="kIr-Yq-nCM"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="restorationID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="qE6-Ag-itZ" detailTextLabel="K2n-EV-0Iz" rowHeight="37" style="IBUITableViewCellStyleSubtitle" id="fGu-aT-mBV">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="85.5" width="375" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGu-aT-mBV" id="nbe-Jy-Aw7">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
@@ -122,6 +176,9 @@
                             <outlet property="delegate" destination="5Vd-Lh-2uB" id="yZh-Yp-Kvk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="search" destination="oDq-vU-VeU" id="Daa-wY-C8P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHE-Wh-JS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

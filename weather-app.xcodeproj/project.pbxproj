@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0646DA75229560950010EB75 /* GliwiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646DA74229560950010EB75 /* GliwiceViewController.swift */; };
 		067B10E1222FD96100B9E739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B10E0222FD96100B9E739 /* AppDelegate.swift */; };
 		067B10E3222FD96100B9E739 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B10E2222FD96100B9E739 /* CurrentWeatherViewController.swift */; };
 		067B10E6222FD96100B9E739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067B10E4222FD96100B9E739 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0646DA74229560950010EB75 /* GliwiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GliwiceViewController.swift; sourceTree = "<group>"; };
 		067B10DD222FD96100B9E739 /* weather-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		067B10E0222FD96100B9E739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		067B10E2222FD96100B9E739 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				067B10E2222FD96100B9E739 /* CurrentWeatherViewController.swift */,
 				9249247A2247CD27005B5439 /* ForecastViewController.swift */,
 				9267FDAE2249460A00730A72 /* ForecastTableVC.swift */,
+				0646DA74229560950010EB75 /* GliwiceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				06C4ADF722424CAC0058F465 /* weatherParser.swift in Sources */,
 				06C4ADF922424DBF0058F465 /* weatherParserProtocol.swift in Sources */,
 				067B10E1222FD96100B9E739 /* AppDelegate.swift in Sources */,
+				0646DA75229560950010EB75 /* GliwiceViewController.swift in Sources */,
 				9267FDAF2249460A00730A72 /* ForecastTableVC.swift in Sources */,
 				06C4ADF3224247970058F465 /* stringParser.swift in Sources */,
 			);
